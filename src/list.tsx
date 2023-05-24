@@ -1,4 +1,4 @@
-import { Action, ActionPanel, List, LocalStorage, Toast, showToast } from "@raycast/api";
+import { Action, ActionPanel, List, LocalStorage, Toast, openExtensionPreferences, showToast } from "@raycast/api";
 import { Journey, STORAGE_JOURNEYS_KEY } from "./types";
 import { useEffect, useState } from "react";
 import Add from "./add";
@@ -61,6 +61,7 @@ export default function ListJourneys() {
             <ActionPanel title={`Actions for ${formatJourney(journey)}`}>
               <Action.Push title="View Hours" target={<Detail journey={journey} />} /> 
               <Action title="Delete" shortcut={{ modifiers: ['cmd'], key: 'delete' }} onAction={async () => deleteJourney(i)} />
+              <Action title="Open Extension Preferences" onAction={openExtensionPreferences} />
             </ActionPanel>
           }
         />
@@ -71,6 +72,7 @@ export default function ListJourneys() {
           actions={
             <ActionPanel>
               <Action.Push title="Go to Add" target={<Add />} />
+              <Action title="Open Extension Preferences" onAction={openExtensionPreferences} />
             </ActionPanel>
           }
         />

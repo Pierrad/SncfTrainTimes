@@ -1,4 +1,4 @@
-import { Action, ActionPanel, Form, Icon, Toast, showToast } from "@raycast/api";
+import { Action, ActionPanel, Form, Icon, Toast, openExtensionPreferences, showToast } from "@raycast/api";
 import { getPreferenceValues, LocalStorage } from "@raycast/api";
 import { useEffect, useState } from "react";
 import { places } from "sncf-api-wrapper";
@@ -95,7 +95,8 @@ export default function Add() {
   return (
     <Form actions={
       <ActionPanel>
-        <Action.SubmitForm title="Add" icon={Icon.CheckCircle} onSubmit={onSubmit} />
+        <Action.SubmitForm title="Add Journey" icon={Icon.CheckCircle} onSubmit={onSubmit} />
+        <Action title="Open Extension Preferences" onAction={openExtensionPreferences} />
       </ActionPanel>
     }>
       <Form.Dropdown id="departure" title="Departure" onChange={setDeparture} value={departure} onSearchTextChange={setDraftDeparture}>

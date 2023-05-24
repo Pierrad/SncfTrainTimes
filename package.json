@@ -12,40 +12,31 @@
   "commands": [
     {
       "name": "list",
-      "title": "List train journeys",
+      "title": "List Train Journeys",
       "description": "List all the journeys added",
-      "mode": "view",
-      "preferences": [
-        {
-          "name": "sncfApiKey",
-          "title": "SNCF API Key",
-          "description": "API Key is used to authenticate with SNCF API",
-          "type": "password",
-          "required": true
-        }
-      ]
+      "mode": "view"
     },
     {
       "name": "add",
-      "title": "Add a train journey",
+      "title": "Add Train Journey",
       "description": "Add a train journey to the list",
-      "mode": "view",
-      "preferences": [
-        {
-          "name": "sncfApiKey",
-          "title": "SNCF API Key",
-          "description": "API Key is used to authenticate with SNCF API",
-          "type": "password",
-          "required": true
-        }
-      ]
+      "mode": "view"
+    }
+  ],
+  "preferences": [
+    {
+      "name": "sncfApiKey",
+      "title": "SNCF API Key",
+      "description": "API Key is used to authenticate with SNCF API",
+      "type": "password",
+      "required": true
     }
   ],
   "dependencies": {
     "@raycast/api": "^1.51.1",
     "@raycast/utils": "^1.6.1",
     "moment-timezone": "^0.5.43",
-    "sncf-api-wrapper": "^0.0.7"
+    "sncf-api-wrapper": "^0.0.9"
   },
   "devDependencies": {
     "@raycast/eslint-config": "1.0.5",
